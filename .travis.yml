@@ -1,0 +1,13 @@
+
+language: cpp
+
+branches:
+  only:
+  - master
+
+notifications:
+  email: false
+
+git:
+  submodules: false
+

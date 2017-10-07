@@ -1,0 +1,3 @@
+[submodule "qxp"]
+	path = qxp
+	url = https://github.com/TransAssist/qxp.git
