@@ -11,3 +11,44 @@ notifications:
 git:
   submodules: false
 
+addons:
+  apt:
+    sources:
+    - sourceline: 'ppa:beineri/opt-qt591-trusty'
+    packages:
+    - git
+    - g++
+    - make
+    - autoconf
+    - automake
+    - libtool
+    - cmake
+    - pkg-config
+    - libxml2-dev
+    - libxslt1-dev
+    - libzip-dev
+    - libsqlite3-dev
+    - libusb-1.0-0-dev
+    - libssl-dev
+    - libssh2-1-dev
+    - libcurl4-openssl-dev
+    - mesa-common-dev
+    - qt59base
+    - qt59declarative
+    - libqt5x11extras5-dev
+
+before_install:
+  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+  - git submodule update --init --recursive
+
+install:
+  - source /opt/qt59/bin/qt59-env.sh
+  - qmake --version
+
+script:
+  - mkdir -p build && cd build
+  - qmake ./../regif.pro
+  - make
+  - ls
+  - rm -rf Makefile *.cpp *.h *.o .qmake.stash
+  - ls -lha

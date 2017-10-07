@@ -7,3 +7,7 @@ SOURCES += \
         main.cpp
 HEADERS += \
     mwindow.h
+DISTFILES += \
+    .travis.yml \
+    appveyor.yml \
+    README.md

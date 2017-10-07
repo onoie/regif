@@ -11,3 +11,31 @@ branches:
   only:
     - master
 
+os: Visual Studio 2015
+
+install:
+  - git submodule update --init --recursive
+  - set QTDIR=C:\Qt\5.7\msvc2015
+  - set PATH=%PATH%;%QTDIR%\bin
+
+build_script:
+  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86'
+  - qmake regif.pro
+  - dir
+  - nmake
+  - dir
+
+after_build:
+  - ps : xcopy lib release/lib /Y
+  - cd release
+  - windeployqt --no-compiler-runtime --no-translations --release regif.exe
+  - ps : rm *.cpp
+  - ps : rm *.h
+  - ps : rm *.obj
+  - dir
+
+artifacts:
+  - path: release
+    name: regif
+  - path: release/regif.exe
+    name: regif.exe
