@@ -1,6 +1,6 @@
 # regif
 [![License](https://img.shields.io/badge/license-LGPL-green.svg)](https://github.com/onoie/regif/blob/master/LICENSE)
-[![Build status](https://ci.appveyor.com/api/projects/status/p758abqo0bt41pva?svg=true)](https://ci.appveyor.com/project/onoie/regif)
+[![Build status](https://ci.appveyor.com/api/projects/status/ncm8qn4mc9wbsyh8?svg=true)](https://ci.appveyor.com/project/onoie/regif)
 [![Build Status](https://travis-ci.org/onoie/regif.svg?branch=master)](https://travis-ci.org/onoie/regif)
 
 ## Description
