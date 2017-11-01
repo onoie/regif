@@ -6,6 +6,10 @@ git:
 matrix:
   include:
   - os: osx
+addons:
+  apt:
+    packages:
+    - zip
 before_install:
   - git submodule update --init --recursive
   - ./travis.sh
