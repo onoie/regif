@@ -20,6 +20,7 @@ install:
 
 build_script:
   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86'
+  - ps : .\bitbucket.ps1
   - qmake regif.pro
   - dir
   - nmake
