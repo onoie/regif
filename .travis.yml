@@ -1,7 +1,4 @@
 language: cpp
-branches:
-  only:
-  - master
 notifications:
   email: false
 git:
@@ -10,28 +7,30 @@ matrix:
   include:
   - os: osx
 before_install:
-  - git submodule update --init --recursive
-  - '[ "$TRAVIS_OS_NAME" != osx ] || rvm install 2.3.0'
-  - '[ "$TRAVIS_OS_NAME" != osx ] || brew update'
-  - '[ "$TRAVIS_OS_NAME" != osx ] || brew install qt5'
-  - '[ "$TRAVIS_OS_NAME" != osx ] || brew link --force qt5'
+- git submodule update --init --recursive
+- '[ "$TRAVIS_OS_NAME" != osx ] || rvm install 2.3.0'
+- '[ "$TRAVIS_OS_NAME" != osx ] || brew update'
+- '[ "$TRAVIS_OS_NAME" != osx ] || brew install qt5'
+- '[ "$TRAVIS_OS_NAME" != osx ] || brew link --force qt5'
 install:
-  - qmake --version
+- qmake --version
 script:
-  - mkdir -p build && cd build
-  - qmake ./../regif.pro
-  - make
-  - pwd
-  - ls
-  - rm -rf Makefile *.cpp *.h *.o .qmake.stash
-  - zip -rm regif.zip regif.app
-  - ls -lha
+- mkdir -p build && cd build
+- qmake ./../regif.pro
+- make
+- pwd
+- ls
+- rm -rf Makefile *.cpp *.h *.o .qmake.stash
+- zip -rm regif.zip regif.app
+- ls -lha
 deploy:
   provider: releases
   skip_cleanup: true
   api_key:
-    secure: cN1UIPmqQjVBeFsl7Nj0fkq3eFnAWbFmTKYlzXR9Q7s8XNxbRtCwj2GidnbtiCeDL7AS/IAnWq4sjNlWN66b0PlszGeeI5z5BzNA4pW+icrXbumBOlcSWVtREOEfkLYxFAqjO2wILH/VRAUCwZDgiEL9v7tzLWxLMOO36SCm+ajHrNqFFGQN+ubq90WRDieqhgfcgqX4zPyHlV46jd6JOMkqWLTrWqTTnT6FZhancGeE6dBm33hV9D+C33tlbOZ7bMNGf/utPDodAssDNYsbHJpu+NrLM8O6nQCuITu88CRKYaPhMIN/dsIS6NEmGR92vSOnn2At1v9ViFoDwxPAhe1IoqQ3PCUkp4m51cx7C0+StgLqadzNF1rGGetAq8vpgOuZJ77sdCWI3vFiV1oVvm6C2Bz/OQem/ualgE/vnMpYYh/JBMpaG1DwdGm+1Je1ysZNHocrlLEBxUAdDh8A6p1R+QFiwDSDF+vyK10b6zrxPZtfpWxSv2ui0xzbAsT7kE9WNwfU35dXEXr7oyYOCvdpeTX0pxS5kY/dkDG/xjVZ2tg9eP4qPSfjChPyv2bFBwrL2dWJjisCs4Mom1PVku1dBoIodpxF4FRG6fYMLstECdPWJy7TxzrSEwGAjtHXo7jOU1VHrXJgv/jO7aniQa0zurFMNmqRbEqMToApArQ=
-  file: "/Users/travis/build/onoie/regif/build/regif.zip"
+    secure: dXIsCceAQ4XE/71a18hhdufrRHpvRnb4SVxtEOTM86vpnJZNrvtnkjq9r45OHtEmcOal88cCM19FOmpj3EefAKNiJ1YVe5/AQ94jFAkHSzqUSeNYn2nsGCPmLxuYHFIGJdtqJf2gqSFluLKhcXeHBT+cZrisnYWzL6oLbQ9mfLhnOSiBziISflTQlEUD6pyLUik59Oi7U8Dov7BCvsSprUoWQCBONEYKbuczMXd60vicFS9eMQDAUBlZo74JDMPVDSy0H3W3Ff9WmM56IlNLmWEwJGxS9amRxKgvta/242ZCY9b00oD87Qh9nuONiNGZ5557zUOgNl2C7DD/b1b00AidY1tes8qMx4RAjtdlqZIoVODdtsZdNIzsJ5T34VEqzG0jNNkNMs1iaqrpWv4yi1sGICHv47fxZTD2sHRf3yi7nmPyjhLWmq95HuWm6erxhp9B94UDuwmkA5uXDbLTQt4GDC6dBA+wJRmoOBtM4/aU5dhFD5s6L3jVS1biZxMhHGiq5+Gevmq5RtK9gEX6EfmcGatuu+QInAHJdijYR9aIwhhKJQ0nJr8v0pgv5sDFdqfBsHuyxuljZ7Z0T8tg5itSs4LyWHvgmNlJYetTD3LF5CglW0xzB1DdzqYgAGpY28tyVDi0oelwrcqTPvUO2mnMrlrUGVEGMyydJJ2ZdCk=
+  file: /Users/travis/build/onoie/hybrid/build/hybrid.zip
   on:
     repo: onoie/regif
     tags: true
+    all_branches: true
+
