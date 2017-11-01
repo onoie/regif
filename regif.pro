@@ -1,4 +1,5 @@
 
+include(qxp/qxp.pri)
 include(src/src.pri)
 
 DISTFILES += \
