@@ -10,7 +10,6 @@ matrix:
   include:
   - os: osx
 before_install:
-  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
   - git submodule update --init --recursive
   - '[ "$TRAVIS_OS_NAME" != osx ] || rvm install 2.3.0'
   - '[ "$TRAVIS_OS_NAME" != osx ] || brew update'
