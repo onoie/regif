@@ -28,7 +28,7 @@ deploy:
   skip_cleanup: true
   api_key:
     secure: VLq/O6wvAaJ4zx/KWD5waXPzvcQx500OU+Mu1pG4U5xcWhP7fUHs8Q+NZ/FqP1THX2cqMa6IQyAiyv9+XwUWNkBblVYENWQcJWfdWX6auNE/zX80PzuUi/zVFBF2XhZBgdWmwZvClkiWUd9sVkqPYmyTBteXKQWyaaisGNwBca7TsB1vSBo5TgzXQ2860h6I9xij0lem4p03yJuiPPDiTRwyocZEnJykq9ym19w9rR6DE5FKJwUksq0my5oRmhasjoZJM0h5EYGkSXN1PrXvnbb5YG8Z7JXUqQB+Co61MetniwCAPiGRQNR8DJM5ejDn87oADaAsmazMKibVYO46MZSgTIpS6xCkcLnmhhVFHe4dq7fSkqXmIZVh1Spg4ai3ViTrxzE/YfdGn686cN650+4P3MeBCezf2bH0EUict/UA0ZGfkPBS2vupzwfuGDN/yeFYG9LRxC8DOTtc6VpKcQ3aTea++EXgm03CnA0lTdMNwzBoiZW0PnMWRC45CEsPprWJ1AtBPmRrIO6wCJXVDGiarDkY0VHuluO0DIuaABS7u17q5tdATbHXW6Q9ybktQbJSVqjNi5VgG/cMLSPe9SCnOoamBikRgV2cxboNxI/oK7QBahbZeXj6tDyRvxXCBhMGANBPIQzf+4tXKprdDimWmw9UHxSoyoUL54FIvqk=
-  file: ''
+  file: /Users/travis/build/onoie/regif/build/regif.zip
   on:
     repo: onoie/regif
     tags: true
